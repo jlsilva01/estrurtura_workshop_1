@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "estrutura-projeto-1"
+version = "0.1.0"
+description = "meu projeto de ETL"
+authors = ["Jorge Luiz da Silva <jlsilva01@yahoo.com.br>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.3"
+pandas = "^2.1.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
