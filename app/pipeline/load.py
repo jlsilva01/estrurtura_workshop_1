@@ -3,7 +3,9 @@ import os
 import pandas as pd
 
 
-def load_excel(dataframe: pd.DataFrame, output_path: str, file_name:str) -> str:
+def load_excel(
+    dataframe: pd.DataFrame, output_path: str, file_name: str
+) -> str:
 
     """
     Função para receber um dataframe e salvar como excel
@@ -15,9 +17,9 @@ def load_excel(dataframe: pd.DataFrame, output_path: str, file_name:str) -> str:
         return: retorna "Arquivo Salvo com Sucesso"
 
     """
-    
+
     if not os.path.exists(output_path):
         os.makedirs(output_path)
-    
-    dataframe.to_excel(f"{output_path}/{file_name}.xlsx", index=False)
-    return "Arquivo Salvo com Sucesso"
+
+    dataframe.to_excel(f'{output_path}/{file_name}.xlsx', index=False)
+    return 'Arquivo Salvo com Sucesso'
