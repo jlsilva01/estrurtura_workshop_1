@@ -16,6 +16,10 @@ pydocstyle = "^6.3.0"
 pip-audit = "^2.6.2"
 pip = "^23.3.2"
 taskipy = "^1.12.2"
+mkdocs = "^1.5.3"
+mkdocstrings-python = "^1.7.5"
+mkdocs-material = "^9.5.2"
+pymdown-extensions = "^10.5"
 
 [build-system]
 requires = ["poetry-core"]
@@ -23,3 +27,5 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
 format = "isort . && blue ."
+test = "poetry run pytest -v"
+run = "python app/main.py"
