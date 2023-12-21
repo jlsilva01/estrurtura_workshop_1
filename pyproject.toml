@@ -15,11 +15,11 @@ isort = "^5.13.2"
 pydocstyle = "^6.3.0"
 pip-audit = "^2.6.2"
 pip = "^23.3.2"
+taskipy = "^1.12.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.isort]
-profile = "black"
-known_third_party = []
+[tool.taskipy.tasks]
+format = "isort . && blue ."

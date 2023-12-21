@@ -8,6 +8,7 @@ import pandas as pd  # biblioteca para manipular dataframes
 
 path = 'data/input'   # caminho da pasta input
 
+
 def extract_from_excel(path: str) -> List[pd.DataFrame]:
     """Ler arquivos de data/input, retornar lista de dataframes.
 
@@ -28,6 +29,7 @@ def extract_from_excel(path: str) -> List[pd.DataFrame]:
         )   # adiciona o dataframe na lista
 
     return dataframe_list   # retorna a lista de dataframes
+
 
 # Normalmente isso é feito para testar a função
 # Se o arquivo for executado diretamente, o if é verdadeiro
