@@ -10,3 +10,4 @@ if __name__ == '__main__':
     dataframe = contact_data_frames(dataframe_list)
     print(type(dataframe))
     load_excel(dataframe, 'data/output', 'output')
+    print('Done!')
