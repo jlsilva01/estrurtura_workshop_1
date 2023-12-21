@@ -1,3 +1,5 @@
+"""File to test the request to the API."""
+
 import requests
 
 api_pokemon = 'https://pokeapi.co/api/v2/pokemon/1'

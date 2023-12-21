@@ -1,0 +1,20 @@
+site_name: Estrutura Workshop ao vivo
+theme:
+  name: material # or other theme
+  palette:
+    primary: green
+  language: pt
+
+repo_name: "jlsilva01/estrutura_workshop_1"
+repo_url: "https://github.com/jlsilva01/estrurtura_workshop_1"
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
