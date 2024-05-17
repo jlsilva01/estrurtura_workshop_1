@@ -20,6 +20,7 @@ mkdocs = "^1.5.3"
 mkdocstrings-python = "^1.7.5"
 mkdocs-material = "^9.5.2"
 pymdown-extensions = "^10.5"
+blue = "^0.9.1"
 
 [build-system]
 requires = ["poetry-core"]
