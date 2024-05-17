@@ -267,18 +267,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comandos" class="md-nav__link">
+  <a href="#workflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Comandos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layout-do-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layout do projeto
+      Workflow
     </span>
   </a>
   
@@ -319,18 +310,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comandos" class="md-nav__link">
+  <a href="#workflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Comandos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layout-do-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layout do projeto
+      Workflow
     </span>
   </a>
   
@@ -355,19 +337,132 @@
 
 
 <h1 id="bemvindo-ao-mkdocs">Bemvindo ao MkDocs</h1>
-<h2 id="comandos">Comandos</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="layout-do-projeto">Layout do projeto</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<h2 id="workflow">Workflow</h2>
+<p>mermaid</p>
+<pre class="mermaid"><code>gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
 </code></pre>
+<h1 id="funcao-de-transformacao-de-dados">Função de transformação de dados</h1>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="app.pipeline.extract.extract_from_excel"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Ler arquivos de data/input, retornar lista de dataframes.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>input_path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>caminho da pasta input</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.List">List</span>[<span title="pandas.DataFrame">DataFrame</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>lista de dataframes</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>app\pipeline\extract.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_from_excel</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ler arquivos de data/input, retornar lista de dataframes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input_path (str): caminho da pasta input</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        lista de dataframes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">all_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;*.xlsx&#39;</span><span class="p">)</span>
+    <span class="p">)</span>   <span class="c1"># lista todos os arquivos .xlsx da pasta</span>
+
+    <span class="n">dataframe_list</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># lista para armazenar os dataframes</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">all_files</span><span class="p">:</span>
+        <span class="n">dataframe_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="p">)</span>   <span class="c1"># adiciona o dataframe na lista</span>
+
+    <span class="k">return</span> <span class="n">dataframe_list</span>   <span class="c1"># retorna a lista de dataframes</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
 
 
 
