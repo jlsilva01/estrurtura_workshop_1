@@ -472,7 +472,7 @@ Future task2               :         des4, after des3, 5d
 <a id="app.pipeline.load.load_excel"></a>
   <div class="doc doc-contents first">
   
-      <p>Função para receber um dataframe e salvar como excel.</p>
+      <p>load_excel: Função para receber um dataframe e salvar como excel.</p>
 
 
 
@@ -529,21 +529,10 @@ Future task2               :         des4, after des3, 5d
               <em>required</em>
           </td>
         </tr>
-        <tr>
-          <td><code>return</code></td>
-          <td>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>retorna "Arquivo Salvo com Sucesso"</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
     </tbody>
   </table>
+      <p>Returns:  <br />
+    Arquivo Salvo com Sucesso</p>
 
           <details class="quote">
             <summary>Source code in <code>app\pipeline\load.py</code></summary>
@@ -563,16 +552,18 @@ Future task2               :         des4, after des3, 5d
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_excel</span><span class="p">(</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_excel</span><span class="p">(</span>
     <span class="n">dataframe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Função para receber um dataframe e salvar como excel.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;load_excel: Função para receber um dataframe e salvar como excel.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        dataframe (pd.DataFrame): dataframe a ser salvo como excel</span>
 <span class="sd">        output_path (str): caminho para salvar o arquivo excel</span>
 <span class="sd">        file_name (str): nome do arquivo excel</span>
-<span class="sd">        return: retorna &quot;Arquivo Salvo com Sucesso&quot;</span>
+<span class="sd">    Returns:    </span>
+<span class="sd">        Arquivo Salvo com Sucesso</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
@@ -595,10 +586,60 @@ Future task2               :         des4, after des3, 5d
   <div class="doc doc-contents first">
   
       <p>contact_data_frames: Função para transformar uma lista de dataframes em um único dataframe.</p>
-<p>Args:
-dataframe_list (List[pd.DataFrame]): caminho da pasta input</p>
-<p>Returns:
-lista de dataframes</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dataframe_list</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[<span title="pandas.DataFrame">DataFrame</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>lista de dataframes</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="pandas.DataFrame">DataFrame</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>pd.DataFrame</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
           <details class="quote">
             <summary>Source code in <code>app\pipeline\transform.py</code></summary>
@@ -615,10 +656,10 @@ lista de dataframes</p>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;contact_data_frames: Função para transformar uma lista de dataframes em um único dataframe.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">    dataframe_list (List[pd.DataFrame]): caminho da pasta input</span>
+<span class="sd">        dataframe_list (List[pd.DataFrame]): lista de dataframes</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">    lista de dataframes    </span>
+<span class="sd">        pd.DataFrame</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dataframe_list</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
