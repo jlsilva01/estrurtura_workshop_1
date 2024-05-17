@@ -377,7 +377,7 @@ Future task2               :         des4, after des3, 5d
     </thead>
     <tbody>
         <tr>
-          <td><code>input_path</code></td>
+          <td><code>path</code></td>
           <td>
                 <code>str</code>
           </td>
@@ -442,7 +442,7 @@ Future task2               :         des4, after des3, 5d
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;extract_from_excel: Ler arquivos de data/input, retornar lista de dataframes.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        input_path (str): caminho da pasta input</span>
+<span class="sd">        path (str): caminho da pasta input</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        lista de dataframes</span>
@@ -596,9 +596,9 @@ Future task2               :         des4, after des3, 5d
   
       <p>contact_data_frames: Função para transformar uma lista de dataframes em um único dataframe.</p>
 <p>Args:
-dataframe_list: List[pd.DataFrame]: caminho da pasta input</p>
+dataframe_list (List[pd.DataFrame]): caminho da pasta input</p>
 <p>Returns:
-pd.DataFrame: lista de dataframes</p>
+lista de dataframes</p>
 
           <details class="quote">
             <summary>Source code in <code>app\pipeline\transform.py</code></summary>
@@ -616,10 +616,10 @@ pd.DataFrame: lista de dataframes</p>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;contact_data_frames: Função para transformar uma lista de dataframes em um único dataframe.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">        dataframe_list: List[pd.DataFrame]: caminho da pasta input</span>
+<span class="sd">        dataframe_list (List[pd.DataFrame]): caminho da pasta input</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">        pd.DataFrame: lista de dataframes</span>
+<span class="sd">        lista de dataframes</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dataframe_list</span><span class="p">)</span>
