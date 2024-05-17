@@ -20,4 +20,11 @@ Future task2               :         des4, after des3, 5d
 
 # Função de transformação de dados
 
+## <b>extract_from_excel<b>
 ### ::: app.pipeline.extract.extract_from_excel
+
+## **load_excel**
+### ::: app.pipeline.load.load_excel
+
+## **contact_data_frames**
+### ::: app.pipeline.transform.contact_data_frames

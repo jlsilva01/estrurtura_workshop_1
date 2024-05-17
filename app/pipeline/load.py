@@ -8,13 +8,15 @@ import pandas as pd
 def load_excel(
     dataframe: pd.DataFrame, output_path: str, file_name: str
 ) -> str:
-    """Função para receber um dataframe e salvar como excel.
+    """load_excel: Função para receber um dataframe e salvar como excel.
 
     Args:
         dataframe (pd.DataFrame): dataframe a ser salvo como excel
         output_path (str): caminho para salvar o arquivo excel
         file_name (str): nome do arquivo excel
-        return: retorna "Arquivo Salvo com Sucesso"
+
+    Returns:    
+        Arquivo Salvo com Sucesso
 
     """
     if not os.path.exists(output_path):

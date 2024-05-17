@@ -10,10 +10,10 @@ path = 'data/input'   # caminho da pasta input
 
 
 def extract_from_excel(path: str) -> List[pd.DataFrame]:
-    """Ler arquivos de data/input, retornar lista de dataframes.
+    """extract_from_excel: Ler arquivos de data/input, retornar lista de dataframes.
 
     Args:
-        input_path (str): caminho da pasta input
+        path (str): caminho da pasta input
 
     Returns:
         lista de dataframes

@@ -1,8 +1,11 @@
 site_name: Estrutura Workshop ao vivo
+nav:
+  - Home: index.md
+  - About: about.md
 theme:
   name: material # or other theme
   palette:
-    primary: green
+    primary: blue
   language: pt
 
 repo_name: "jlsilva01/estrutura_workshop_1"
