@@ -15,7 +15,7 @@ def load_excel(
         output_path (str): caminho para salvar o arquivo excel
         file_name (str): nome do arquivo excel
 
-    Returns:    
+    Returns:
         Arquivo Salvo com Sucesso
 
     """
